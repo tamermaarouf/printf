@@ -21,6 +21,8 @@ typedef struct op
 } op_t;
 
 int get_op_func(char, va_list);
+int _putchar(char c);
+int _strlen(char *s);
 int print_char(va_list);
 int print_str(va_list);
 int _printf(const char *format, ...);
