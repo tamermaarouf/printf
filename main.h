@@ -20,7 +20,7 @@ typedef struct op
 	int (*f)(va_list);
 } op_t;
 
-int get_op_func(char, va_list);
+int (*get_op_func(const char *))(va_list);
 int _putchar(char c);
 int _strlen(char *s);
 int print_char(va_list);

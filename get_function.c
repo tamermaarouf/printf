@@ -1,7 +1,6 @@
 #include "main.h"
 
-
-int get_op_func(char spec, va_list arg)
+int (*get_op_func(const char *spec))(va_list)
 {
 	op_t ops[] = {
 		{"c", print_char},
@@ -9,15 +8,15 @@ int get_op_func(char spec, va_list arg)
 		{"i", print_int},
 		{NULL, NULL}
 	};
-	int i = 0, count = 0;
+	int i = 0;
 
 	while (ops[i].op)
 	{
-		if ((*(ops + i)->op) == spec)
+		if ((*(ops + i)->op) == *spec)
 		{
-			count += (ops + i)->f(arg);
+			return((ops + i)->f);
 		}
 		i++;
 	}
-	return count;
+	return (NULL);
 }
