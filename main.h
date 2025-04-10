@@ -25,6 +25,7 @@ int _putchar(char c);
 int _strlen(char *s);
 int print_char(va_list);
 int print_str(va_list);
+int print_int(va_list);
 int _printf(const char *format, ...);
 
 #endif /*MAIN_H*/

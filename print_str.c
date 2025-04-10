@@ -1,9 +1,15 @@
 #include "main.h"
 
+/**
+ * print_str - print a string.
+ * @arg: argumen t.
+ * Return: the length of the string.
+ */
+
 int print_str(va_list arg)
 {
 	int count;
-       	char *str;
+	char *str;
 
 	str = va_arg(arg, char *);
 	count = 0;
@@ -12,5 +18,5 @@ int print_str(va_list arg)
 		_putchar(*str++);
 		++count;
 	}
-	return count;
+	return (count);
 }

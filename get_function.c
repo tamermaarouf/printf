@@ -6,6 +6,7 @@ int get_op_func(char spec, va_list arg)
 	op_t ops[] = {
 		{"c", print_char},
 		{"s", print_str},
+		{"i", print_int},
 		{NULL, NULL}
 	};
 	int i = 0, count = 0;
