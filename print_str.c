@@ -9,9 +9,8 @@ int print_str(va_list arg)
 	count = 0;
 	while (*str)
 	{
-		print_char(arg);
+		_putchar(*str++);
 		++count;
-		++str;
 	}
 	return count;
 }
