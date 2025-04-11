@@ -18,6 +18,8 @@ int _printf(const char *format, ...)
 	count = 0;
 	while (*format != '\0')
 	{
+		if (*format == '\0')
+			return (count);
 		if (*format == '%')
 		{
 			f = get_op_func(++format);
@@ -25,7 +27,7 @@ int _printf(const char *format, ...)
 				count += f(ap);
 		}
 		else
-			count += write(1, format, 1);			
+		count += write(1, format, 1);
 		format++;
 	}	
 	va_end(ap);
