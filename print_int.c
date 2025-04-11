@@ -6,7 +6,6 @@ int print_int(va_list arg)
 	count = 0;
 
 	n = va_arg(arg, int);
-	printf("count = %d\n", n);
 	if (n < 0)
 	{
 		_putchar('-');

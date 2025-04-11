@@ -13,10 +13,7 @@ int print_str(va_list arg)
 
 	str = va_arg(arg, char *);
 	count = 0;
-	while (*str)
-	{
-		_putchar(*str++);
-		++count;
-	}
+	while (*str != '\0')
+		count += write(1, str++, 1);
 	return (count);
 }
