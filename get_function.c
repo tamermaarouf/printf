@@ -1,5 +1,12 @@
 #include "main.h"
 
+
+/**
+ * get_op_func - function that finds formats for _printf
+ * @spec: pointer to char
+ * Return: NULL or function associated
+ */
+
 int (*get_op_func(const char *spec))(va_list)
 {
 	op_t ops[] = {
@@ -14,7 +21,7 @@ int (*get_op_func(const char *spec))(va_list)
 	{
 		if ((*(ops + i)->op) == *spec)
 		{
-			return((ops + i)->f);
+			return ((ops + i)->f);
 		}
 		i++;
 	}

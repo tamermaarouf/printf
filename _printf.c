@@ -1,10 +1,16 @@
 #include "main.h"
 
+/**
+ *  _printf - is a function that selects the correct function to print.
+ *  @format: identifier to look for.
+ *  Return: the length of the string.
+ */
+
 int _printf(const char *format, ...)
 {
 	va_list ap;
 	int (*f)(va_list);
-	int 	count, i;
+	int count, i;
 
 	if (format == NULL)
 		return (-1);
