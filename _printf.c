@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 				count += f(ap);
 		}
 		else
-		count += write(1, format, 1);
+			count += write(1, format, 1);
 		format++;
 	}	
 	va_end(ap);
