@@ -22,9 +22,18 @@ int _printf(const char *format, ...)
 			return (count);
 		if (*format == '%')
 		{
-			f = get_op_func(++format);
-			if (f != NULL)
-				count += f(ap);
+			if ((*(++format) != '%'))
+			{
+				f = get_op_func(format);
+				if (f != NULL)
+					count += f(ap);
+			}
+			else
+			{
+				++format;
+				count++;
+			}
+
 		}
 		else
 			count += write(1, format, 1);
