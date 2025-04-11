@@ -10,37 +10,24 @@ int _printf(const char *format, ...)
 {
 	va_list ap;
 	int (*f)(va_list);
-	int count, i;
+	int count;
 
 	if (format == NULL)
 		return (-1);
 	va_start(ap, format);
 	count = 0;
-	i = 0;
-	while (format[i])
+	while (*format != '\0')
 	{
-		while (format[i] != '%' && format[i])
+		if (*format == '%')
 		{
-			_putchar(format[i]);
-			count++;
-			i++;
+			f = get_op_func(++format);
+			if (f != NULL)
+				count += f(ap);
 		}
-		if (format[i] == '\0')
-			return (count);
-		if (format[i] == '%')
-			f = get_op_func(&format[i + 1]);
-		if (f != NULL)
-		{
-			count += f(ap);
-			i += 2;
-			continue;
-		}
-		if (!format[i + 1])
-			return (-1);
-		_putchar(format[i]);
-		count++;
-		i++;
-	}
+		else
+			count += write(1, format, 1);			
+		format++;
+	}	
 	va_end(ap);
 	return (count);
 }

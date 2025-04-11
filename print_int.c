@@ -13,7 +13,6 @@ int print_int(va_list arg)
 	}
 	while ((n / 10) != 0)
 	{
-		_putchar((n % 10) + 48);
 		n = n / 10;
 		count++;
 	}
