@@ -2,7 +2,10 @@
 
 int print_int(va_list arg)
 {
-
-	printf("print_int: %d", va_arg(arg, int));
-	return (2);
+	int count, n;
+	count = 0;
+	n = va_arg(arg, int);
+	if (n < 10)
+		_putchar(n);
+	return (count);
 }
