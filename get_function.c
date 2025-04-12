@@ -12,6 +12,7 @@ int (*get_op_func(const char *spec))(va_list)
 	op_t ops[] = {
 		{"c", print_char},
 		{"s", print_str},
+		{"%", print_percent},
 		{"i", print_int},
 		{NULL, NULL}
 	};
