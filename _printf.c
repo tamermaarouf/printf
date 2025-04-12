@@ -24,7 +24,6 @@ int _printf(const char *format, ...)
 			f = get_op_func(++format);
 			if (f != NULL)
 				count += f(ap);
-
 		}
 		else
 			count += write(1, format, 1);

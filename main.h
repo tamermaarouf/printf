@@ -26,6 +26,7 @@ int _strlen(char *s);
 int print_char(va_list);
 int print_str(va_list);
 int print_percent(va_list);
+int recursive(int number);
 int print_int(va_list);
 int _printf(const char *format, ...);
 

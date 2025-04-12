@@ -6,16 +6,15 @@ int print_int(va_list arg)
 	count = 0;
 
 	n = va_arg(arg, int);
-	if (n < 0)
-	{
-		_putchar('-');
-		n = -n;
-	}
-	while ((n / 10) != 0)
-	{
-		n = n / 10;
-		count++;
-	}
-	_putchar((n % 10) + 48);
+	count += recursive(n);
 	return (count);
+}
+
+
+int recursive(int number) 
+{
+	int digit = number % 10;
+	if (number != 0)
+		recursive(number / 10);
+	return (_putchar((digit) + 48));
 }
