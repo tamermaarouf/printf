@@ -24,8 +24,8 @@ int _printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			index++;
-			if (format[index] == '%')
-				_putchar('%');
+			if (*(format + index) == '%')
+				count += _putchar('%');
 			else
 			{
 				f = get_op_func(&format[index]);
