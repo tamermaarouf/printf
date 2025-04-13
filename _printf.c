@@ -17,14 +17,14 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 	count = 0;
 	index = 0;
-	while (*(format + index) != '\0')
+	while (format[index] != '\0' && format)
 	{
-		if (*(format + index) == '\0')
+		if (format[index] == '\0')
 			return (count);
-		if (*(format + index) == '%')
+		if (format[index] == '%')
 		{
 			index++;
-			if (*(format + index) == '%')
+			if (format[index] == '%')
 				_putchar('%');
 			else
 			{
