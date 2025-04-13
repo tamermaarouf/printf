@@ -50,7 +50,6 @@ int _printf(const char *format, ...)
 		}
 		format++;
 	}
-	print_buffer(buffer, &index);
 	count += index;
 	va_end(ap);
 	return (count);
