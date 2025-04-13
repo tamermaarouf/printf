@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	index = 0;
 	while (*format)
 	{
-		if (format[index] == '\0')
+		if (*format == '\0')
 			return (count);
 		if (*format == '%')
 		{
