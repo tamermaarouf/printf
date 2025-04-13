@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  *  _printf - is a function that selects the correct function to print.
  *  @format: identifier to look for.
@@ -15,7 +16,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	va_start(ap, format);
 	count = 0;
-	while (*format != '\0')
+	while (*format)
 	{
 		if (*format == '\0')
 			return (count);

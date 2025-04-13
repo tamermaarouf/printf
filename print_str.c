@@ -8,12 +8,27 @@
 
 int print_str(va_list arg)
 {
-	int count;
+	int count, i;
 	char *str;
 
 	str = va_arg(arg, char *);
-	count = 0;
-	while (*str != '\0')
-		count += write(1, str++, 1);
-	return (count);
+	if (NULL == str)
+	{
+		i = 0;
+		str = "(null)";
+		count = _strlen(str);
+		while (i < count)
+		{
+			write(1, &str[i], 1);
+			++i;
+		}
+		return (count);
+	}
+	else
+	{
+		count = 0;
+		while (*str != '\0')
+			count += write(1, str++, 1);
+		return (count);
+	}
 }
