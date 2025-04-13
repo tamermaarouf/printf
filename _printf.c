@@ -27,7 +27,11 @@ int _printf(const char *format, ...)
 			{
 				f = get_op_func(&format[index]);
 				if (f != NULL)
+				{
 					count += f(ap);
+					index += 1;
+					continue;
+				}
 			}
 			else
 				count += write(1, &format[index], 1);
