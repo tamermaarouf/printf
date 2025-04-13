@@ -14,6 +14,7 @@ int (*get_op_func(const char *spec))(va_list)
 		{"s", print_str},
 		{"%", print_percent},
 		{"i", print_int},
+		{"d", print_dec},
 		{NULL, NULL}
 	};
 	int i = 0;

@@ -1,6 +1,6 @@
 #include "main.h"
 
-int print_int(va_list arg)
+int print_dec(va_list arg)
 {
 	int count, n;
 	count = 0;
