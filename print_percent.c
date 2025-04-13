@@ -8,8 +8,7 @@
  */
 int print_percent(va_list p)
 {
-	printf("per===%i\n", va_arg(p, int));
 	(void)p;
-	_putchar(37);
+	_putchar('-');
 	return (1);
 }

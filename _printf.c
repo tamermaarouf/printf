@@ -23,10 +23,14 @@ int _printf(const char *format, ...)
 			return (count);
 		if (format[index] == '%')
 		{
-			index++;
-			f = get_op_func(&format[index]);
-			if (f != NULL)
-				count += f(ap);
+			if (format[++index] != '%')
+			{
+				f = get_op_func(&format[index]);
+				if (f != NULL)
+					count += f(ap);
+			}
+			else
+				count += write(1, &format[index], 1);
 		}
 		else
 			count += write(1, &format[index], 1);
