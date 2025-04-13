@@ -13,8 +13,14 @@ int print_int(va_list arg)
 
 int recursive(int number) 
 {
-	int digit = number % 10;
-	if (number != 0)
-		recursive(number / 10);
-	return (_putchar((digit) + 48));
+	unsigned int digit = number;
+
+	if (number < 0)
+	{
+		_putchar('-');
+		digit = -digit;
+	}
+	if ((digit / 10) > 0)
+		recursive(digit / 10);
+	return (_putchar((digit % 10) + 48));
 }

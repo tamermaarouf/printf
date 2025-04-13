@@ -21,9 +21,7 @@ int (*get_op_func(const char *spec))(va_list)
 	while (ops[i].op)
 	{
 		if ((*(ops + i)->op) == *spec)
-		{
 			return ((ops + i)->f);
-		}
 		i++;
 	}
 	return (NULL);

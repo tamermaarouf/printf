@@ -11,35 +11,47 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int (*f)(va_list);
 	int count, index;
+	char buffer[BUFF_SIZE];
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(ap, format);
 	count = 0;
 	index = 0;
-	while (format && format[index])
+	while (*format)
 	{
 		if (format[index] == '\0')
 			return (count);
-		if (format[index] == '%')
+		if (*format == '%')
 		{
-			if (format[++index] != '%')
+			format++;
+			if (*format == '%')
 			{
-				f = get_op_func(&format[index]);
-				if (f != NULL)
+				buffer[index++] = '%';
+				if (index <= BUFF_SIZE)
 				{
-					count += f(ap);
-					index += 1;
-					continue;
+					print_buffer(buffer, &index);
+					count += index;
 				}
 			}
 			else
-				count += write(1, &format[index], 1);
+				f = get_op_func(&format[index]);
+			if (f != NULL)
+				count += f(ap);
 		}
 		else
-			count += write(1, &format[index], 1);
-		index++;
+		{
+			buffer[index++] = *format;
+			if (index <= BUFF_SIZE)
+			{
+				print_buffer(buffer, &index);
+				count += index;
+			}
+		}
+		format++;
 	}
+	print_buffer(buffer, &index);
+	count += index;
 	va_end(ap);
 	return (count);
 }

@@ -8,6 +8,7 @@
 #include <stdbool.h>
 #include <limits.h>
 
+#define BUFF_SIZE 1024
 /**
  * struct op - Struct op
  *
@@ -21,6 +22,7 @@ typedef struct op
 	int (*f)(va_list);
 } op_t;
 
+void print_buffer(char buffer[], int *buff_ind);
 int (*get_op_func(const char *))(va_list);
 int _putchar(char c);
 int _strlen(char *s);
