@@ -11,30 +11,32 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int (*f)(va_list);
 	int count, index;
+	char *ptr;
 
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format [2])
 		return (-1);
+	ptr = (char *)format;
 	va_start(ap, format);
 	count = 0;
 	index = 0;
-	while (format[index] != '\0' && format)
+	while (ptr[index] != '\0' && ptr)
 	{
-		while (format[index] != '%' && format[index])
+		while (ptr[index] != '%' && ptr[index])
 		{
-			_putchar(format[index]);
+			_putchar(ptr[index]);
 			count++;
 			index++;
 		}
-		if (format[index] == '\0')
+		if (ptr[index] == '\0')
 			return (count);
 		index++;
-		if (*(format + index) == '%')
+		if (*(ptr + index) == '%')
 			count += _putchar('%');
 		else
 		{
-			f = get_op_func(&format[index]);
+			f = get_op_func(&ptr[index]);
 			if (f != NULL)
 				count += f(ap);
 		}
