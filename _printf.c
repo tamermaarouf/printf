@@ -21,23 +21,23 @@ int _printf(const char *format, ...)
 	index = 0;
 	while (format[index] != '\0' && format)
 	{
+		while (format[index] != '%' && format[index])
+		{
+			_putchar(format[index]);
+			count++;
+			index++;
+		}
 		if (format[index] == '\0')
 			return (count);
-		if (format[index] == '%')
-		{
-			index++;
-			if (*(format + index) == '%')
-				count += _putchar('%');
-			else
-			{
-				f = get_op_func(&format[index]);
-				if (f != NULL)
-					count += f(ap);
-			}
-
-		}
+		index++;
+		if (*(format + index) == '%')
+			count += _putchar('%');
 		else
-			count += write(1, &format[index], 1);
+		{
+			f = get_op_func(&format[index]);
+			if (f != NULL)
+				count += f(ap);
+		}
 		index++;
 	}
 	va_end(ap);
