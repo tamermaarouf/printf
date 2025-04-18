@@ -20,12 +20,12 @@ int _printf(const char *format, ...)
 {
 	t_data data;
 
+	int (*f)(t_data *data, va_list);
 	va_start(data.ap, format);
 	if (init_data(&data, format))
 		return (-1);
 	/*
 	va_list ap;
-	int (*f)(va_list);
 	int count, index, buff_index;
 	char *ptr;
 	char r[BUFF_SIZE];
@@ -42,7 +42,10 @@ int _printf(const char *format, ...)
 		{
 			if (parse_format(&data))
 				return (-1);
-			/*render_format(&data);*/
+			f = render_format(&data);
+			if (f != NULL)
+				f(&data, data.ap);
+
 		}
 		else
 		{
@@ -54,32 +57,4 @@ int _printf(const char *format, ...)
 	va_end(data.ap);
 	free(data.buff);
 	return (data.chars_written);
-	/**
-	while (ptr[index] != '\0' && ptr)
-	{
-		while (ptr[index] != '%' && ptr[index])
-		{
-			r[buff_index] = ptr[index];
-			_putchar(ptr[index]);
-			count += write(1, &ptr[index], 1);
-			index++, buff_index++;
-		}
-		if (ptr[index] == '\0')
-			return (count);
-		index++;
-		if (*(ptr + index) == '%')
-			count += _putchar('%');
-		else
-		{
-			f = get_op_func(&ptr[index]);
-			if (f != NULL)
-				count += f(ap);
-		}
-		index++;
-		r[buff_index + 1] = '\0';
-	}
-	print_buffer(r, &buff_index);
-	va_end(ap);
-	return (count);
-	*/
 }

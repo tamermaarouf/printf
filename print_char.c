@@ -5,9 +5,9 @@
  * @arg: The character to print
  * Return: 1
  */
-int print_char(va_list arg)
+int print_char(t_data *data, va_list arg)
 {
 	int c = va_arg(arg, int);
-
-	return (write(1, &c, 1));
+	data->buff[data->buffer_index++] = c;
+	return (0);
 }

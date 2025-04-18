@@ -15,7 +15,7 @@
 #define SPECIFIRES "csdipuxX%"
 
 typedef unsigned char byte;
-
+struct s_data;  
 /*typedef enum
 {
 	BASE_2 = 2,
@@ -48,6 +48,7 @@ typedef struct s_format
 	/*e_base base;*/
 }t_format;
 
+
 typedef struct s_data
 {
 	/* pointer copy to format*/
@@ -75,21 +76,21 @@ typedef struct s_data
 typedef struct op
 {
 	char *op;
-	int (*f)(va_list);
+	int (*f)(t_data *, va_list);
 } op_t;
 
 void _memset(void *, int, size_t);
-int (*get_op_func(const char *))(va_list);
 int _putchar(char c);
 int _strlen(char *s);
-int print_char(va_list);
-int print_str(va_list);
-int print_percent(va_list);
-int print_bin(va_list);
+int print_char(t_data *, va_list);
+int print_str(t_data *, va_list);/*
+int print_percent(t_data *, va_list);
+int print_bin(t_data *, va_list);
 int print_binary(unsigned long int); 
 int recursive(int number);
-int print_int(va_list);
-int print_dec(va_list);
+int print_int(t_data *, va_list);
+int print_dec(t_data *, va_list);
+int (*get_op_func(const char *))(va_list);*/
 void print_buffer(char buffer[], int *buff_ind);
 int _printf(const char *format, ...);
 bool in(const char *s, char c);
@@ -100,5 +101,6 @@ void get_value(t_data *, int *);
 void write_buf(t_data *, char);
 void flush_buf(t_data *);
 void _memset(void *, int, size_t);
+int (*render_format(t_data *))(t_data *, va_list);
 #endif /*MAIN_H*/
 

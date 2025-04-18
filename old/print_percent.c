@@ -6,7 +6,7 @@
  *
  * Return: number chars printed
  */
-int print_percent(va_list p)
+int print_percent(t_data *data, va_list p)
 {
 	(void)p;
 	_putchar('-');

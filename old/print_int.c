@@ -1,6 +1,6 @@
 #include "main.h"
 
-int print_dec(va_list arg)
+int print_int(t_data *data, va_list arg)
 {
 	int count, n;
 	count = 0;

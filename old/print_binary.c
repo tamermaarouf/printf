@@ -1,6 +1,6 @@
 #include "main.h"
 
-int print_bin(va_list ap)
+int print_bin(t_data *data, va_list ap)
 {
 	unsigned long int n;
 	unsigned int count;
