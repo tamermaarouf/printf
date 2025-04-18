@@ -18,10 +18,6 @@ int init_data(t_data *data, const char *fmt)
 
 int _printf(const char *format, ...)
 {
-	if (!format || (format[0] == '%' && !format[1]))
-		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
 	t_data data;
 
 	va_start(data.ap, format);
@@ -36,6 +32,10 @@ int _printf(const char *format, ...)
 
 	ptr = (char *)format;
 	count = 0, index = 0, buff_index = 0;*/
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
 	while (*data.s)
 	{
 		if (*data.s == '%' && *(++data.s))
