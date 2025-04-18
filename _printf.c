@@ -24,14 +24,6 @@ int _printf(const char *format, ...)
 	va_start(data.ap, format);
 	if (init_data(&data, format))
 		return (-1);
-	/*
-	va_list ap;
-	int count, index, buff_index;
-	char *ptr;
-	char r[BUFF_SIZE];
-
-	ptr = (char *)format;
-	count = 0, index = 0, buff_index = 0;*/
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
@@ -48,9 +40,7 @@ int _printf(const char *format, ...)
 
 		}
 		else
-		{
 			write_buf(&data, *data.s);
-		}
 		++data.s;
 	}
 	flush_buf(&data);

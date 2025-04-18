@@ -8,8 +8,7 @@
  */
 int print_percent(t_data *data, va_list p)
 {
-	int c = va_arg(p, int);
-
-	data->buff[data->buffer_index++] = c;
+	(void)p;
+	data->buff[data->buffer_index++] = '%';
 	return (0);
 }

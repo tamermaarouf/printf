@@ -83,8 +83,8 @@ void _memset(void *, int, size_t);
 int _putchar(char c);
 int _strlen(char *s);
 int print_char(t_data *, va_list);
-int print_str(t_data *, va_list);/*
-int print_percent(t_data *, va_list);
+int print_str(t_data *, va_list);
+int print_percent(t_data *, va_list);/*
 int print_bin(t_data *, va_list);
 int print_binary(unsigned long int); 
 int recursive(int number);
