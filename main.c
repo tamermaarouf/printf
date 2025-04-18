@@ -19,6 +19,7 @@ int main(void)
 	ui = (unsigned int)INT_MAX + 1024;
 	addr = (void *)0x7ffe637541f0;
 	_printf("Length:[%d, %i]\n", len, len);
+	_printf("%c\n", 65);
 	printf("Length:[%d, %i]\n", len2, len2);
 	_printf("Negative:[%d]\n", -762534);
 	printf("Negative:[%d]\n", -762534);
@@ -36,6 +37,7 @@ int main(void)
 	printf("Address:[%p]\n", addr);
 	len = _printf("Percent:[%%]\n");
 	len2 = printf("Percent:[%%]\n");
+	_printf("binary[98] = %b\n", 98);
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
 	/**
