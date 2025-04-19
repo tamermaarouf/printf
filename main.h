@@ -101,7 +101,7 @@ void get_value(t_data *, int *);
 void write_buf(t_data *, char);
 void flush_buf(t_data *);
 void putchar_buf_n(char c, int percision, t_data *data);
-void _memset(void *, int , size_t);
+void _memset(void *, byte , size_t);
 int (*render_format(t_data *))(t_data *, va_list);
 #endif /*MAIN_H*/
 

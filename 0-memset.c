@@ -9,7 +9,7 @@
  * Return:  a pointer to the memory area s
  */
 
-void _memset(void *s, int b, size_t n)
+void _memset(void *s, byte b, size_t n)
 {
 	byte *ptr_byte;
 
