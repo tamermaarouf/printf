@@ -14,6 +14,8 @@ bool in(const char *s, char c)
 	return false;
 }
 
+/**
+ *
 void _memset(void *ptr, int value, size_t n)
 {
 	byte *ptr_byte;
@@ -25,3 +27,4 @@ void _memset(void *ptr, int value, size_t n)
 		--n;
 	}
 }
+*/

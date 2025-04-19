@@ -13,6 +13,8 @@ int print_str(t_data *data, va_list arg)
 	str = va_arg(arg, char *);
 	if (str == NULL)
 		str = "(null)";
+
+
 	while (*str != '\0')
 		data->buff[data->buffer_index++] = *str++;
 	return (0);

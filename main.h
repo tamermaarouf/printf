@@ -10,9 +10,9 @@
 
 
 #define BUFF_SIZE 1024
-#define FLAGS "+-0#"
+#define FLAGS "+- 0#"
 #define NUMBER "0123456789"
-#define SPECIFIRES "csdipuxX%"
+#define SPECIFIER "diuoxXfFeEgGaAcspn%"
 
 typedef unsigned char byte;
 struct s_data;  
@@ -59,7 +59,7 @@ typedef struct s_data
 	/* chars written */
 	int chars_written;
 
-	/* buffer */ 
+	/* buffer  in the HEAP*/ 
 	char *buff;
 	int buffer_index;
 
@@ -79,7 +79,7 @@ typedef struct op
 	int (*f)(t_data *, va_list);
 } op_t;
 
-void _memset(void *, int, size_t);
+
 int _putchar(char c);
 int _strlen(char *s);
 int print_char(t_data *, va_list);
@@ -101,7 +101,7 @@ void get_value(t_data *, int *);
 void write_buf(t_data *, char);
 void flush_buf(t_data *);
 void putchar_buf_n(char c, int percision, t_data *data);
-void _memset(void *, int, size_t);
+void _memset(void *, int , size_t);
 int (*render_format(t_data *))(t_data *, va_list);
 #endif /*MAIN_H*/
 

@@ -51,13 +51,22 @@ void get_value(t_data *data, int *value)
 }
 int parse_format(t_data *data)
 {
-	parse_flags(data);
-	get_value(data, &data->frm.width_value);
+	/* 0 refresh the data*/
+	_memset(&data->frm, -1, sizeof(t_format));
+	data->frm.percision_value = -1;
 
-	if (*data->s == '.' && *(data->s))
+	/*1 [0-' '#+]*/
+	parse_flags(data);
+
+	/* 2 [width *] */
+	get_value(data, &data->frm.width_value);
+	
+	/*3 [.percision_value *]*/
+	if (*data->s == '.' && *(++data->s))
 		get_value(data, &data->frm.percision_value);
 
-	if(!in(SPECIFIRES, *data->s))
+	
+	if(!in(SPECIFIER, *data->s))
 		return (-1);
 	else
 	{

@@ -7,12 +7,19 @@
 
 int init_data(t_data *data, const char *fmt)
 {
+	data->frm.width_value = 0;
+	data->frm.hash = false;
+	data->frm.left_justified = false;
+	data->frm.plus = false;
+	data->frm.space = false;
+	data->frm.zero_pad = false;
 	data->chars_written = 0;
 	data->s = fmt;
 	data->buff = malloc(BUFF_SIZE * sizeof(char));
 	if (data->buff == NULL)
 		return (-1);
 	data->buffer_index = 0;
+	_memset(data->buff, -1, BUFF_SIZE * sizeof(char));
 	return (0);
 }
 
@@ -37,7 +44,6 @@ int _printf(const char *format, ...)
 			f = render_format(&data);
 			if (f != NULL)
 				f(&data, data.ap);
-
 		}
 		else
 			write_buf(&data, *data.s);
