@@ -7,6 +7,7 @@ int (*render_format(t_data *data))(t_data *, va_list)
 		{"c", print_char},
 		{"s", print_str},
 		{"%", print_percent},
+		{"i", print_int},
 		{NULL, NULL}
 	};
 	int i = 0;

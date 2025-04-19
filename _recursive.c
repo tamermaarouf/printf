@@ -11,5 +11,5 @@ int recursive(int number)
 	}
 	if ((digit / 10) > 0)
 		recursive(digit / 10);
-	return (_putchar((digit % 10) + 48));
+	return ((digit % 10) + 48);
 }

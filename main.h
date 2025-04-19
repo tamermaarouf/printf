@@ -84,11 +84,11 @@ int _putchar(char c);
 int _strlen(char *s);
 int print_char(t_data *, va_list);
 int print_str(t_data *, va_list);
-int print_percent(t_data *, va_list);/*
+int print_percent(t_data *, va_list);
+int recursive(int number);
+int print_int(t_data *, va_list);/*
 int print_bin(t_data *, va_list);
 int print_binary(unsigned long int); 
-int recursive(int number);
-int print_int(t_data *, va_list);
 int print_dec(t_data *, va_list);
 int (*get_op_func(const char *))(va_list);*/
 void print_buffer(char buffer[], int *buff_ind);
@@ -100,6 +100,7 @@ void parse_flags(t_data *);
 void get_value(t_data *, int *);
 void write_buf(t_data *, char);
 void flush_buf(t_data *);
+void putchar_buf_n(char c, int percision, t_data *data);
 void _memset(void *, int, size_t);
 int (*render_format(t_data *))(t_data *, va_list);
 #endif /*MAIN_H*/

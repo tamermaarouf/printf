@@ -2,10 +2,9 @@
 
 int print_int(t_data *data, va_list arg)
 {
-	int count, n;
-	count = 0;
+	int n;
 
 	n = va_arg(arg, int);
-	count += recursive(n);
-	return (count);
+	data->buff[data->buffer_index++] = recursive(n);
+	return (0);
 }

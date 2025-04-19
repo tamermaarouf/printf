@@ -16,3 +16,17 @@ void write_buf(t_data *data, char c)
 		flush_buf(data);
 	data->buff[data->buffer_index++] = c;
 }
+
+/**
+ * function to write a char n times
+ * useful for padding with '0' or ' '
+ */
+
+void putchar_buf_n(char c, int percision, t_data *data)
+{
+	if (percision <= 0)
+		return ;
+	while (percision--)
+		write_buf(data, c);
+}
+
