@@ -14,7 +14,7 @@ int (*render_format(t_data *data))(t_data *, va_list)
 
 	while (ops[i].op)
 	{
-		if ((*(ops + i)->op) == *data->s)
+		if ((*(ops + i)->op) == data->frm.specifier)
 			return ((ops + i)->f);
 		++i;
 	}

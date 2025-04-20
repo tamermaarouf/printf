@@ -34,11 +34,11 @@ typedef enum E_base
 typedef struct s_format
 {
 	/*flag*/
-	bool left_justified;
-	bool plus;
-	bool space;
-	bool hash;
-	bool zero_pad;
+	byte left_justified;
+	byte plus;
+	byte space;
+	byte hash;
+	byte zero_pad;
 	/* "csdixXpu...."*/
 	char specifier;
 	/* width + percision */

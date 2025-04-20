@@ -8,11 +8,11 @@
 int init_data(t_data *data, const char *fmt)
 {
 	data->frm.width_value = 0;
-	data->frm.hash = false;
-	data->frm.left_justified = false;
-	data->frm.plus = false;
-	data->frm.space = false;
-	data->frm.zero_pad = false;
+	data->frm.hash = 0;
+	data->frm.left_justified = 0;
+	data->frm.plus = 0;
+	data->frm.space = 0;
+	data->frm.zero_pad = 0;
 	data->chars_written = 0;
 	data->s = fmt;
 	data->buff = malloc(BUFF_SIZE * sizeof(char));

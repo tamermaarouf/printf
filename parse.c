@@ -20,19 +20,19 @@ void parse_flags(t_data *data)
 		switch (flag)
 		{
 			case '0':
-				data->frm.zero_pad = true;
+				data->frm.zero_pad = 1;
 				break;
 			case '+':
-				data->frm.plus = true;
+				data->frm.plus = 1;
 				break;
 			case ' ':
-				data->frm.space = true;
+				data->frm.space = 1;
 				break;
 			case '#':
-				data->frm.hash = true;
+				data->frm.hash = 1;
 				break;
 			case '-':
-				data->frm.left_justified = true;
+				data->frm.left_justified = 1;
 				break;
 		}
 		++data->s;			
