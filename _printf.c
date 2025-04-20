@@ -37,6 +37,8 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (*data.s)
 	{
+		if (*data.s == '\0')
+			return (data.chars_written);
 		if (*data.s == '%' && *(++data.s))
 		{
 			if (parse_format(&data))
