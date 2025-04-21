@@ -26,6 +26,7 @@ int main(void)
 	_printf("floats: %4.2f %+.0e %E \n", 3.1416, 3.1416, 3.1416);
 	_printf("Width trick: %*d \n", 5, 10);
 	_printf("String:%s \n", "A string");
+	_printf("%%\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
 	ui = (unsigned int)INT_MAX + 1024;
 	addr = (void *)0x7ffe637541f0;

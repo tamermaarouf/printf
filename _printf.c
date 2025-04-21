@@ -15,6 +15,7 @@ int init_data(t_data *data, const char *fmt)
 	data->frm.plus = 0;
 	data->frm.space = 0;
 	data->frm.zero_pad = 0;
+	data->frm.percision_value = INT_MAX;
 	data->chars_written = 0;
 	data->s = fmt;
 	data->buff = malloc(BUFF_SIZE * sizeof(char));
@@ -38,14 +39,14 @@ int _printf(const char *format, ...)
 	int (*f)(t_data *data, va_list);
 
 	va_start(data.ap, format);
-	if (init_data(&data, format))
-		return (-1);
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
 	while (*data.s)
 	{
+		if (init_data(&data, format))
+			return (-1);
 		if (*data.s == '\0')
 			return (data.chars_written);
 		if (*data.s == '%' && *(++data.s))
