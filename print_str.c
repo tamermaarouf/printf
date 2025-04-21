@@ -5,6 +5,7 @@
  * @data: pointer to struct
  * @arg: argumen t.
  * Return: the length of the string.
+ * [-][width][.percision]
  */
 
 int print_str(t_data *data, va_list arg)
@@ -17,6 +18,7 @@ int print_str(t_data *data, va_list arg)
 
 
 	while (*str != '\0')
-		data->buff[data->buffer_index++] = *str++;
+		putchar_buf_n((char)*str++, 1, data);
+	/*data->buff[data->buffer_index++] = *str++;*/
 	return (0);
 }
