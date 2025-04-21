@@ -96,14 +96,10 @@ int parse_format(t_data *data)
 		get_value(data, &data->frm.percision_value);
 	if (!in(SPECIFIER, *data->s))
 		return (-1);
-	else
-	{
-		data->frm.specifier = *data->s;
-		f = render_format(data);
-		if (f != NULL)
-			f(data, data->ap);
-	}
-
+	data->frm.specifier = *data->s;
+	f = render_format(data);
+	if (f != NULL)
+		f(data, data->ap);
 	/**
 	 * if(in("diu", data->frm.specifier))
 	 * data->frm.base = BASE_10;

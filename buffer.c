@@ -54,7 +54,7 @@ void putchar_buf_n(char c, int percision, t_data *data)
 void putstr_buf_n(char *str, int percision, t_data *data)
 {
 	if (percision <= 0)
-		return ;
+		return;
 	while (percision-- && *str)
 		write_buf(data, *str++);
 }

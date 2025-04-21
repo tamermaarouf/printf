@@ -50,9 +50,11 @@ int _printf(const char *format, ...)
 		if (*data.s == '%' && *(++data.s))
 		{
 			parse_format(&data);
-			/*if (parse_format(&data))
+			/*
+			 * if (parse_format(&data))
 				return (-1);
-			render_format(&data);*/
+				render_format(&data);
+			*/
 		}
 		else
 			write_buf(&data, *data.s);
