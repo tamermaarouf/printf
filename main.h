@@ -13,7 +13,7 @@
 #define FLAGS "+- 0#"
 #define NUMBER "0123456789"
 #define SPECIFIER "diuoxXfFeEgGaAcspn%"
-
+#define INT_MAX __INT_MAX__
 typedef unsigned char byte;
 struct s_data;  
 /*typedef enum
