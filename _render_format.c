@@ -1,7 +1,13 @@
 #include "main.h"
 
+/**
+ * render_format - get the function pointer
+ * @data: struct
+ *
+ * Return: function pointer or NULL
+ */
 
-int (*render_format(t_data *data))(t_data *, va_list)
+int (*render_format(t_data * data))(t_data *, va_list)
 {
 	op_t ops[] = {
 		{"c", print_char},

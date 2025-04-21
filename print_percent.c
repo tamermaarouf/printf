@@ -2,6 +2,7 @@
 
 /**
  * print_percent - prints string
+ * @data: Pointer to struct
  * @p: argument pointer
  *
  * Return: number chars printed

@@ -1,6 +1,12 @@
 #include "main.h"
 
-int recursive(int number) 
+/**
+ * recursive - function return one char to caller
+ * @number: number to rec
+ * Return: return one char
+ */
+
+int recursive(int number)
 {
 	unsigned int digit = number;
 

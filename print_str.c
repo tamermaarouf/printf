@@ -2,6 +2,7 @@
 
 /**
  * print_str - print a string.
+ * @data: pointer to struct
  * @arg: argumen t.
  * Return: the length of the string.
  */

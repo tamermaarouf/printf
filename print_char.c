@@ -2,14 +2,17 @@
 
 /**
  * print_char - writes the character c to stdout
+ * @data: pointer to struct
  * @arg: The character to print
  * Return: 1
  */
 int print_char(t_data *data, va_list arg)
 {
 	int c = va_arg(arg, int);
-	int width;
+	int width = 0;
+
 	width = data->frm.width_value;
+
 	if (width > 1)
 	{
 		if (data->frm.left_justified == 1)

@@ -1,30 +1,21 @@
 #include "main.h"
 
+/**
+ * in - check if char in string
+ * @s: string to check
+ * @c: the char is lloking for
+ * Return: true  or false
+ */
 
 bool in(const char *s, char c)
 {
 	if (s == NULL)
-		return false;
+		return (false);
 	while (*s)
 	{
 		if (*s == c)
-			return true;
+			return (true);
 		++s;
 	}
-	return false;
+	return (false);
 }
-
-/**
- *
-void _memset(void *ptr, int value, size_t n)
-{
-	byte *ptr_byte;
-
-	ptr_byte = (byte *)ptr;
-	while (n)
-	{
-		*ptr_byte = value;
-		--n;
-	}
-}
-*/

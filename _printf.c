@@ -1,8 +1,10 @@
 #include "main.h"
+
 /**
- *  _printf - is a function that selects the correct function to print.
- *  @format: identifier to look for.
- *  Return: the length of the string.
+ * init_data - function to reset param
+ * @data: pointer to struct bool
+ * @fmt: pointer copy to argument
+ * Return: Alawys return success
  */
 
 int init_data(t_data *data, const char *fmt)
@@ -23,11 +25,18 @@ int init_data(t_data *data, const char *fmt)
 	return (0);
 }
 
+/**
+ *  _printf - is a function that selects the correct function to print.
+ *  @format: identifier to look for.
+ *  Return: the length of the string.
+ */
+
 int _printf(const char *format, ...)
 {
 	t_data data;
 
 	int (*f)(t_data *data, va_list);
+
 	va_start(data.ap, format);
 	if (init_data(&data, format))
 		return (-1);

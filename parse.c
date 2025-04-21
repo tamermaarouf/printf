@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * my_atoi - convert ascii to int i
+ * @data: pointer to struct
+ * Return: value int
+ */
+
 int my_atoi(t_data *data)
 {
 	int value;
@@ -7,9 +13,14 @@ int my_atoi(t_data *data)
 	value = 0;
 	while (in(NUMBER, *data->s))
 		value = (value * 10) + (*data->s++ - 48);
-	return value;
+	return (value);
 }
 
+/**
+ * parse_flags - get flags[0-+#' '] to true
+ * @data: pointer to struct
+ * Retrun: coid
+ */
 void parse_flags(t_data *data)
 {
 	char flag;
@@ -35,9 +46,16 @@ void parse_flags(t_data *data)
 				data->frm.left_justified = 1;
 				break;
 		}
-		++data->s;			
+		++data->s;
 	}
 }
+
+/**
+ * get_value - get value from va_list
+ * @data: pointer to struct
+ * @value: number
+ * Return: void
+ */
 
 void get_value(t_data *data, int *value)
 {
@@ -49,6 +67,13 @@ void get_value(t_data *data, int *value)
 	}
 	*value = my_atoi(data);
 }
+
+/**
+ * parse_format - call function to reset frm
+ * @data: pointer to struct
+ * Return: Always return success
+ */
+
 int parse_format(t_data *data)
 {
 	/* 0 refresh the data*/
@@ -60,24 +85,19 @@ int parse_format(t_data *data)
 
 	/* 2 [width *] */
 	get_value(data, &data->frm.width_value);
-	
 	/*3 [.percision_value *]*/
 	if (*data->s == '.' && *(++data->s))
 		get_value(data, &data->frm.percision_value);
-
-	
-	if(!in(SPECIFIER, *data->s))
+	if (!in(SPECIFIER, *data->s))
 		return (-1);
-	else
-	{
-		data->frm.specifier = *data->s;
-		/*if(in("diu", data->frm.specifier))
-			data->frm.base = BASE_10;
-		else if (in("xXp", data->frm.specifier))
-		{
-			data->frm.base = BASE_16;
-
-		}*/
-	}
+	data->frm.specifier = *data->s;
+	/**
+	 * if(in("diu", data->frm.specifier))
+	 * data->frm.base = BASE_10;
+	 * else if (in("xXp", data->frm.specifier))
+	 * {
+	 * data->frm.base = BASE_16;
+	 * }
+	 */
 	return (0);
 }
