@@ -36,8 +36,6 @@ int _printf(const char *format, ...)
 {
 	t_data data;
 
-	int (*f)(t_data *data, va_list);
-
 	va_start(data.ap, format);
 	if (init_data(&data, format))
 		return (-1);
@@ -51,11 +49,10 @@ int _printf(const char *format, ...)
 			return (data.chars_written);
 		if (*data.s == '%' && *(++data.s))
 		{
-			if (parse_format(&data))
+			parse_format(&data);
+			/*if (parse_format(&data))
 				return (-1);
-			f = render_format(&data);
-			if (f != NULL)
-				f(&data, data.ap);
+			render_format(&data);*/
 		}
 		else
 			write_buf(&data, *data.s);

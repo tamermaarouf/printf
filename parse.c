@@ -31,18 +31,23 @@ void parse_flags(t_data *data)
 		switch (flag)
 		{
 			case '0':
+				printf("FLAGS= %c\n", flag);
 				data->frm.zero_pad = 1;
 				break;
 			case '+':
+				printf("FLAGS= %c\n", flag);
 				data->frm.plus = 1;
 				break;
 			case ' ':
+				printf("FLAGS= %c\n", flag);
 				data->frm.space = 1;
 				break;
 			case '#':
+				printf("FLAGS= %c\n", flag);
 				data->frm.hash = 1;
 				break;
 			case '-':
+				printf("FLAGS= %c\n", flag);
 				data->frm.left_justified = 1;
 				break;
 		}
@@ -76,6 +81,7 @@ void get_value(t_data *data, int *value)
 
 int parse_format(t_data *data)
 {
+	int (*f)(t_data *data, va_list);
 	/* 0 refresh the data*/
 	_memset(&data->frm, -1, sizeof(t_format));
 	data->frm.percision_value = -1;
@@ -90,7 +96,14 @@ int parse_format(t_data *data)
 		get_value(data, &data->frm.percision_value);
 	if (!in(SPECIFIER, *data->s))
 		return (-1);
-	data->frm.specifier = *data->s;
+	else
+	{
+		data->frm.specifier = *data->s;
+		f = render_format(data);
+		if (f != NULL)
+			f(data, data->ap);
+	}
+
 	/**
 	 * if(in("diu", data->frm.specifier))
 	 * data->frm.base = BASE_10;
