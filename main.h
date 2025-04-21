@@ -44,6 +44,7 @@ typedef struct s_format
 	/* width + percision */
 	int width_value;
 	int percision_value;
+	int padding_space;
 
 	/*e_base base;*/
 }t_format;
@@ -101,6 +102,7 @@ void get_value(t_data *, int *);
 void write_buf(t_data *, char);
 void flush_buf(t_data *);
 void putchar_buf_n(char c, int percision, t_data *data);
+void putstr_buf_n(char *str, int percision, t_data *data);
 void _memset(void *, byte , size_t);
 int (*render_format(t_data *))(t_data *, va_list);
 #endif /*MAIN_H*/

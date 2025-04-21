@@ -43,3 +43,18 @@ void putchar_buf_n(char c, int percision, t_data *data)
 		write_buf(data, c);
 }
 
+/**
+ * putstr_buf_n - function to write a str with a refined control
+ * @str: pointer to string
+ * @percision: padding
+ * @data: pointer to struct
+ *
+ * over percision in buf
+ */
+void putstr_buf_n(char *str, int percision, t_data *data)
+{
+	if (percision <= 0)
+		return ;
+	while (percision-- && *str)
+		write_buf(data, *str++);
+}
