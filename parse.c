@@ -31,23 +31,18 @@ void parse_flags(t_data *data)
 		switch (flag)
 		{
 			case '0':
-				printf("FLAGS= %c\n", flag);
 				data->frm.zero_pad = 1;
 				break;
 			case '+':
-				printf("FLAGS= %c\n", flag);
 				data->frm.plus = 1;
 				break;
 			case ' ':
-				printf("FLAGS= %c\n", flag);
 				data->frm.space = 1;
 				break;
 			case '#':
-				printf("FLAGS= %c\n", flag);
 				data->frm.hash = 1;
 				break;
 			case '-':
-				printf("FLAGS= %c\n", flag);
 				data->frm.left_justified = 1;
 				break;
 		}
@@ -85,6 +80,7 @@ int parse_format(t_data *data)
 	/* 0 refresh the data*/
 	_memset(&data->frm, -1, sizeof(t_format));
 	data->frm.percision_value = -1;
+	printf("current:%c\n", *data->s);
 
 	/*1 [0-' '#+]*/
 	parse_flags(data);

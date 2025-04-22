@@ -3,7 +3,6 @@
 /**
  * render_format - get the function pointer
  * @data: struct
- * @va_list: arg
  * Return: function pointer or NULL
  */
 
