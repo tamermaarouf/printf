@@ -80,7 +80,6 @@ int parse_format(t_data *data)
 	/* 0 refresh the data*/
 	_memset(&data->frm, -1, sizeof(t_format));
 	data->frm.percision_value = -1;
-	printf("current:%c\n", *data->s);
 
 	/*1 [0-' '#+]*/
 	parse_flags(data);
