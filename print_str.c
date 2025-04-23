@@ -62,5 +62,5 @@ int print_str(t_data *data, va_list arg)
 			putstr_buf_n(str, _strlen(str), data);
 	}
 	/*data->buff[data->buffer_index++] = *str++;*/
-	return (0);
+	return (data->chars_written);
 }
