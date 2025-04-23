@@ -29,5 +29,5 @@ int print_char(t_data *data, va_list arg)
 	else
 		putchar_buf_n((char)c, 1, data);
 	/*data->buff[data->buffer_index++] = c;*/
-	return (0);
+	return (data->chars_written);
 }

@@ -10,7 +10,7 @@ void flush_buf(t_data *data)
 	data->chars_written += write(STDOUT_FILENO,
 				data->buff,
 				data->buffer_index);
-	_memset(data->buff, -1, BUFF_SIZE * sizeof(byte));
+	_memset(data->buff, -1, BUFF_SIZE);
 	data->buffer_index = 0;
 }
 

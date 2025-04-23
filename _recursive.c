@@ -15,7 +15,7 @@ int recursive(int number)
 		_putchar('-');
 		digit = -digit;
 	}
-	if ((digit / 10) > 0)
-		recursive(digit / 10);
-	return ((digit % 10) + 48);
+	if (digit / 10 > 0)
+		return (recursive(digit / 10) % 10);
+	return (1);
 }
