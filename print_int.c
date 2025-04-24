@@ -17,7 +17,7 @@ int print_int(t_data *data, va_list arg)
 		data->buf_num[data->buffer_digit++] = '-';
 		N = -N;
 	}
-	else
+	if (N > 9)
 	{
 		while (N)
 		{
