@@ -108,5 +108,6 @@ void putchar_buf_n(char c, int percision, t_data *data);
 void putstr_buf_n(char *str, int percision, t_data *data);
 void _memset(void *, byte , size_t);
 int (*render_format(t_data *))(t_data *, va_list);
+int init_data(t_data *data, const char *fmt);
 #endif /*MAIN_H*/
 

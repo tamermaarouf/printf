@@ -37,5 +37,5 @@ int print_int(t_data *data, va_list arg)
 	for (i = data->buffer_digit; i >= 0; i--)
 		data->buff[data->buffer_index++] = data->buf_num[i];
 
-	return (0);
+	return (data->buffer_index);
 }
