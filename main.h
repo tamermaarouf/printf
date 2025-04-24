@@ -63,6 +63,9 @@ typedef struct s_data
 	/* buffer  in the HEAP*/ 
 	char *buff;
 	int buffer_index;
+	/* buffer for number */
+	char *buf_num;
+	int buffer_digit;
 
 	/* All the bools [+=' '0#][width][.percision] */
 	t_format frm;
@@ -87,10 +90,10 @@ int print_char(t_data *, va_list);
 int print_str(t_data *, va_list);
 int print_percent(t_data *, va_list);
 int recursive(int number);
+int print_dec(t_data *, va_list);
 int print_int(t_data *, va_list);/*
 int print_bin(t_data *, va_list);
 int print_binary(unsigned long int); 
-int print_dec(t_data *, va_list);
 int (*get_op_func(const char *))(va_list);*/
 void print_buffer(char buffer[], int *buff_ind);
 int _printf(const char *format, ...);

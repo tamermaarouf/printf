@@ -21,7 +21,11 @@ int init_data(t_data *data, const char *fmt)
 	data->buff = malloc(BUFF_SIZE * sizeof(char));
 	if (data->buff == NULL)
 		return (-1);
+	data->buf_num = malloc(BUFF_SIZE * sizeof(char));
+	if (data->buf_num == NULL)
+		return (-1);
 	data->buffer_index = 0;
+	data->buffer_digit = 0;
 	_memset(data->buff, -1, BUFF_SIZE * sizeof(char));
 	return (0);
 }
