@@ -11,5 +11,5 @@ int print_percent(t_data *data, va_list p)
 {
 	(void)p;
 	data->buff[data->buffer_index++] = '%';
-	return (0);
+	return (1);
 }
