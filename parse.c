@@ -77,9 +77,8 @@ void get_value(t_data *data, int *value)
 int parse_format(t_data *data)
 {
 	/* 0 refresh the data*/
-	int (*f)(t_data *data, va_list);
-
 	_memset(&data->frm, -1, sizeof(t_format));
+	data->frm.percision_value = -1;
 
 	/*1 [0-' '#+]*/
 	parse_flags(data);
@@ -92,10 +91,6 @@ int parse_format(t_data *data)
 	if (!in(SPECIFIER, *data->s))
 		return (-1);
 	data->frm.specifier = *data->s;
-	f = render_format(data);
-	if (f != NULL)
-		f(data, data->ap);
-
 	/**
 	 * if(in("diu", data->frm.specifier))
 	 * data->frm.base = BASE_10;
@@ -104,5 +99,5 @@ int parse_format(t_data *data)
 	 * data->frm.base = BASE_16;
 	 * }
 	 */
-	return (1);
+	return (0);
 }
