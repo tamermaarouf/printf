@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (init_data(&data, format))
 		return (-1);
-	va_start(data.ap, data.s);
+	va_start(data.ap, format);
 	while (*data.s)
 	{
 		if (*data.s == '\0')
