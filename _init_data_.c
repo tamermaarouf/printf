@@ -30,6 +30,5 @@ int init_data(t_data *data, const char *fmt)
 		return (-1);
 	data->buffer_index = 0;
 	data->buffer_digit = 0;
-	_memset(data->buff, -1, BUFF_SIZE * sizeof(char));
 	return (0);
 }
