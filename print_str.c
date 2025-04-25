@@ -42,7 +42,7 @@ int print_string(t_data *data, va_list arg)
 
 	str = va_arg(arg, char *);
 	if (str == NULL)
-		str = "(null)";
+		str = NULL_STRING;
 
 	set_str_padding_spaces(data, str);
 	if (data->frm.left_justified > 0)

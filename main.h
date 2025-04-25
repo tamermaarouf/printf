@@ -10,12 +10,16 @@
 
 
 #define BUFF_SIZE 1024
+#define BUF_FLUSH -1
+
+#define NULL_STRING "(null)"
+
 #define FLAGS "+- 0#"
 #define NUMBER "0123456789"
 #define SPECIFIER "diuoxXfFeEgGaAcspn%"
 #define INT_MAX __INT_MAX__
 typedef unsigned char byte;
-struct s_data;  
+
 /*typedef enum
 {
 	BASE_2 = 2,
@@ -34,11 +38,11 @@ typedef enum E_base
 typedef struct s_format
 {
 	/*flag*/
-	byte left_justified;
-	byte plus;
-	byte space;
-	byte hash;
-	byte zero_pad;
+	unsigned int left_justified;
+	unsigned int plus;
+	unsigned int space;
+	unsigned int hash;
+	unsigned int zero_pad;
 	/* "csdixXpu...."*/
 	char specifier;
 	/* width + percision */
@@ -86,6 +90,7 @@ typedef struct op
 
 int _putchar(char c);
 int _strlen(char *s);
+
 int print_char(t_data *, va_list);
 int print_string(t_data *, va_list);
 int print_percent(t_data *, va_list);
