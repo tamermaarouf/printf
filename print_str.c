@@ -16,6 +16,7 @@ int print_string(t_data *data, va_list arg)
 	if (str == NULL)
 		str = NULL_STRING;
 
+	/**
 	set_str_padding_spaces(data, str);
 	if (data->frm.left_justified > 0)
 	{
@@ -32,6 +33,11 @@ int print_string(t_data *data, va_list arg)
 			putstr_buf_n(str, data->frm.percision_value, data);
 		else
 			putstr_buf_n(str, _strlen(str), data);
+	}*/
+	while (*str)
+	{
+		putchar_buf_n(*str, 1, data);
+		++str;
 	}
 	/*data->buff[data->buffer_index++] = *str++;*/
 	return (data->chars_written);
