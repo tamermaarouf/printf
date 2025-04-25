@@ -29,7 +29,7 @@ static void set_str_padding_spaces(t_data *data, char *s)
 	}
 }
 /**
- * print_str - print a string.
+ * print_string - print a string.
  * @data: pointer to struct
  * @arg: argumen t.
  * Return: the length of the string.
