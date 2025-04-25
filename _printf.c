@@ -9,6 +9,7 @@
 int _printf(const char *format, ...)
 {
 	t_data data;
+	int (*f)(t_data *data, va_list);
 
 	va_start(data.ap, format);
 	if (!format || (format[0] == '%' && !format[1]))
@@ -25,7 +26,10 @@ int _printf(const char *format, ...)
 		{
 			if (parse_format(&data))
 				return (-1);
-			/*render_format(&data);*/
+			f = render_format(&data);
+			if (f != NULL)
+				f(&data, data.ap);
+
 		}
 		else
 			write_buf(&data, *data.s);
