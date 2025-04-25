@@ -9,7 +9,8 @@
 int print_char(t_data *data, va_list arg)
 {
 	int c = va_arg(arg, int);
-	int width = 0;
+	/**
+	 * int width = 0;
 
 	width = data->frm.width_value;
 
@@ -27,7 +28,8 @@ int print_char(t_data *data, va_list arg)
 		}
 	}
 	else
-		putchar_buf_n((char)c, 1, data);
+	*/
+	putchar_buf_n((char)c, 1, data);
 	/*data->buff[data->buffer_index++] = c;*/
 	return (data->chars_written);
 }
