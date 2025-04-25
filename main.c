@@ -28,7 +28,7 @@ int main(void)
 	_printf("%%\n");
 	_printf("descimal: %d\n", 1024);
 	_printf("decimal negative: %d\n", -1024);
-	_printf("INT_MAX: %d\n", INT_MAX);
+	_printf("INT_MAX: %u\n", UINT_MAX);
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
 	ui = (unsigned int)INT_MAX + 1024;

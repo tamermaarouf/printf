@@ -78,6 +78,7 @@ int parse_format(t_data *data)
 {
 	/* 0 refresh the data*/
 	int (*f)(t_data *data, va_list);
+
 	_memset(&data->frm, -1, sizeof(t_format));
 
 	/*1 [0-' '#+]*/
