@@ -40,5 +40,5 @@ int print_string(t_data *data, va_list arg)
 		++str;
 	}
 	/*data->buff[data->buffer_index++] = *str++;*/
-	return (data->chars_written);
+	return (1);
 }

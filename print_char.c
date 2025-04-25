@@ -31,5 +31,5 @@ int print_char(t_data *data, va_list arg)
 	*/
 	putchar_buf_n((char)c, 1, data);
 	/*data->buff[data->buffer_index++] = c;*/
-	return (data->chars_written);
+	return (1);
 }

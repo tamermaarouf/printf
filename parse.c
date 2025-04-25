@@ -104,5 +104,5 @@ int parse_format(t_data *data)
 	 * data->frm.base = BASE_16;
 	 * }
 	 */
-	return (0);
+	return (1);
 }
