@@ -10,7 +10,7 @@ int (*render_format(t_data * data))(t_data *, va_list)
 {
 	op_t ops[] = {
 		{"c", print_char},
-		{"s", print_str},
+		{"s", print_string},
 		{"%", print_percent},
 		{"i", print_int},
 		{"d", print_dec},

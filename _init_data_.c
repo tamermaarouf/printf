@@ -13,7 +13,6 @@ int init_data(t_data *data, const char *fmt)
 		return (-1);
 	if (fmt[0] == '%' && fmt[1] == ' ' && !fmt[2])
 		return (-1);
-
 	data->frm.width_value = 0;
 	data->frm.hash = 0;
 	data->frm.left_justified = 0;

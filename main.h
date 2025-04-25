@@ -87,7 +87,7 @@ typedef struct op
 int _putchar(char c);
 int _strlen(char *s);
 int print_char(t_data *, va_list);
-int print_str(t_data *, va_list);
+int print_string(t_data *, va_list);
 int print_percent(t_data *, va_list);
 int recursive(int number);
 int print_dec(t_data *, va_list);

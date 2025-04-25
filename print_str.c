@@ -36,7 +36,7 @@ static void set_str_padding_spaces(t_data *data, char *s)
  * [-][width][.percision]
  */
 
-int print_str(t_data *data, va_list arg)
+int print_string(t_data *data, va_list arg)
 {
 	char *str;
 
