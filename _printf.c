@@ -12,10 +12,6 @@ int _printf(const char *format, ...)
 	int (*f)(t_data *data, va_list);
 
 	va_start(data.ap, format);
-	if (!format || (format[0] == '%' && !format[1]))
-		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
 	if (init_data(&data, format))
 		return (-1);
 	while (*data.s)
