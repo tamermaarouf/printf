@@ -15,7 +15,6 @@ int main(void)
 	unsigned int ui;
 	void *addr;
 
-	len = _printf("Let's try to printf a simple sentence.\n");
 	_printf("I am %s years old.\n", "Tamer");
 	printf("Characters: [%5c] [%-10c] \n", 'a', 65);
 	_printf("Characters: [%5c] [%-10c] \n", 'a', 65);
@@ -30,6 +29,7 @@ int main(void)
 	_printf("descimal: %d\n", 1024);
 	_printf("decimal negative: %d\n", -1024);
 	_printf("INT_MAX: %d\n", INT_MAX);
+	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
 	ui = (unsigned int)INT_MAX + 1024;
 	addr = (void *)0x7ffe637541f0;
