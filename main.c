@@ -27,6 +27,9 @@ int main(void)
 	_printf("Width trick: %*d \n", 5, 10);
 	_printf("String:%s \n", "A string");
 	_printf("%%\n");
+	_printf("descimal: %d\n", 1024);
+	_printf("decimal negative: %d\n", -1024);
+	_printf("INT_MAX: %d\n", INT_MAX);
 	len2 = printf("Let's try to printf a simple sentence.\n");
 	ui = (unsigned int)INT_MAX + 1024;
 	addr = (void *)0x7ffe637541f0;
