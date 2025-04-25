@@ -11,9 +11,13 @@ int _printf(const char *format, ...)
 	t_data data;
 	int (*f)(t_data *data, va_list);
 
+	va_start(data.ap, format);
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
 	if (init_data(&data, format))
 		return (-1);
-	va_start(data.ap, format);
 	while (*data.s)
 	{
 		if (*data.s == '\0')

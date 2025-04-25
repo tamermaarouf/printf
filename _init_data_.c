@@ -13,6 +13,7 @@ int init_data(t_data *data, const char *fmt)
 		return (-1);
 	if (fmt[0] == '%' && fmt[1] == ' ' && !fmt[2])
 		return (-1);
+	data->s = fmt;
 	data->frm.width_value = 0;
 	data->frm.hash = 0;
 	data->frm.left_justified = 0;
@@ -21,7 +22,6 @@ int init_data(t_data *data, const char *fmt)
 	data->frm.zero_pad = 0;
 	data->frm.percision_value = INT_MAX;
 	data->chars_written = 0;
-	data->s = fmt;
 	data->buff = malloc(BUFF_SIZE * sizeof(char));
 	if (data->buff == NULL)
 		return (-1);
