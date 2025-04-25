@@ -22,7 +22,7 @@ void flush_buf(t_data *data)
  */
 void write_buf(t_data *data, char c)
 {
-	if (data->buffer_index == BUFF_SIZE)
+	if ((data->buffer_index >= BUFF_SIZE) || c == BUF_FLUSH)
 		flush_buf(data);
 	data->buff[data->buffer_index++] = c;
 }
