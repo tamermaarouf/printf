@@ -5,7 +5,6 @@
  * @data: pointer to struct
  * Return: value int
  */
-
 int my_atoi(t_data *data)
 {
 	int value;
@@ -92,7 +91,8 @@ int parse_format(t_data *data)
 	if (!in(SPECIFIER, *data->s))
 		return (-1);
 	data->frm.specifier = *data->s;
-	f = render_format(data);
+	if (in(SPECIFIER, *data->s))
+		f = render_format(data);
 	if (f != NULL)
 		f(data, data->ap);
 	/**

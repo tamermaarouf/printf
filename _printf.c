@@ -22,7 +22,10 @@ int _printf(const char *format, ...)
 	while (*data.s && *data.s != '\0')
 	{
 		if (*data.s == '%' && *(++data.s))
-			parse_format(&data);
+		{
+			if (parse_format(&data))
+				return (-1);
+		}
 		else
 			write_buf(&data, *data.s);
 		if (*data.s == '\0')
