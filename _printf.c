@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 
 	if (init_data(&data, format))
 		return (-1);
-	while (*data.s)
+	while (*data.s && *data.s != '\0')
 	{
 		if (*data.s == '%' && *(++data.s))
 			parse_format(&data);
